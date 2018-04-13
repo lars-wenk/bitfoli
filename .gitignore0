@@ -1,9 +1,0 @@
-/node_modules
-.DS_Store
-npm-debug.log
-/.idea
-/test/performance-results/*/**
-/test-results
-.vimrc
-package-lock.json
-/app/config/credentials.json
