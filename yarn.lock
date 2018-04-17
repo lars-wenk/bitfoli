@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-Validator@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/Validator/-/Validator-1.0.5.tgz#5cd53cbf94fe1c3f0566c2af815d60f4acd347de"
-
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -4327,6 +4323,10 @@ jsx-ast-utils@^2.0.0, jsx-ast-utils@^2.0.1:
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.0.1.tgz#e801b1b39985e20fffc87b40e3748080e2dcac7f"
   dependencies:
     array-includes "^3.0.3"
+
+jwt-decode@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
 
 killable@^1.0.0:
   version "1.0.0"

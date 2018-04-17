@@ -12,11 +12,17 @@ export const userLoggedOut = () => ({
 
 export const login = credentials => dispatch =>
   api.user.login(credentials).then(user => {
-    localStorage.binfoliJWT = user.token;
+    localStorage.bitfoliJWT = user.token;
     dispatch(userLoggedIn(user))
   });
 
 export const logout = () => dispatch => {
-    localStorage.removeItem('binfoliJWT');
+    localStorage.removeItem('bitfoliJWT');
     dispatch(userLoggedOut());
   };
+
+export const confirm = (token) => (dispatch) => api.user.confirm(token)
+.then( user => {
+  localStorage.bitfoliJWT = user.token;
+  dispatch(userLoggedIn(user));
+})
