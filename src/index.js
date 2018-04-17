@@ -11,16 +11,21 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './rootReducer';
 import { userLoggedIn } from './actions/auth';
+import setAuthorizationHeader from "./utils/setAuthorizationHeader";
 
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
 
-if(localStorage.bitfoliJWT) {
+if (localStorage.bitfoliJWT) {
   const payload = decode(localStorage.bitfoliJWT);
-  const user = { token: localStorage.bitfoliJWT, email: payload.email, confirmed: payload.confirmed };
-
+  const user = {
+    token: localStorage.bitfoliJWT,
+    email: payload.email,
+    confirmed: payload.confirmed
+  };
+  setAuthorizationHeader(localStorage.bitfoliJWT);
   store.dispatch(userLoggedIn(user));
 }
 
@@ -32,5 +37,4 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
-
 registerServiceWorker();
