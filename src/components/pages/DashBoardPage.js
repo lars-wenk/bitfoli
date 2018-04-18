@@ -7,6 +7,7 @@ const DashBoardPage = ({ isConfirmed }) => (
   <div>
     <h1>welcome to your dashboard</h1>
     {!isConfirmed && <ConfirmEmailMessage />}
+
   </div>
 );
 

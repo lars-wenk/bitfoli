@@ -35,6 +35,6 @@ ReactDOM.render(
       <Route component={App} />
     </Provider>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById("bitfoli")
 );
 registerServiceWorker();

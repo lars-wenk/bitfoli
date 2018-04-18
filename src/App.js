@@ -10,12 +10,16 @@ import SignupPage from "./components/pages/SignupPage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
 import ResetPasswordPage from "./components/pages/ResetPasswordPage";
+import FAQPage from "./components/pages/FAQPage";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
+import TopNavigation from "./components/elements/TopNavigation";
+import Footer from "./components/elements/Footer";
 
 
 const App = ({ location, isAuthenticated }) => (
-  <div className="ui container">
+  <div>
+    <TopNavigation />
     {isAuthenticated}
     <Route location={location} path="/" exact component={HomePage} />
     <Route
@@ -43,12 +47,19 @@ const App = ({ location, isAuthenticated }) => (
       exact
       component={ResetPasswordPage}
     />
+    <GuestRoute
+      location={location}
+      path="/faq"
+      exact
+      component={FAQPage}
+    />
     <UserRoute
       location={location}
       path="/dashboard"
       exact
       component={DashboardPage}
     />
+    <Footer />
   </div>
 );
 

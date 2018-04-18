@@ -1,31 +1,58 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
-import * as actions from '../../actions/auth';
+import PropTypes from "prop-types";
+import { Button, Icon, Grid, Container, Header } from 'semantic-ui-react';
 
-const HomePage = ({ isAuthenticated, logout }) => (
-  <div>
-    <h1>Home Page</h1>
-    { isAuthenticated ? (
-      <button onClick={() => logout()}>Logout</button>
-    ): (
-      <div>
-        <Link to="/login">Login</Link> or <Link to="/signup">Sign Up</Link>
-      </div>
-    )}
-  </div>
+const HomepageHeading = ({ mobile }) => (
+  <Container text>
+    <Header
+      as='h1'
+      content='xxx'
+      inverted
+      style={{
+        fontSize: mobile ? '2em' : '4em',
+        fontWeight: 'normal',
+        marginBottom: 0,
+        marginTop: mobile ? '1.5em' : '3em',
+      }}
+    />
+    <Header
+      as='h2'
+      content='xxx'
+      inverted
+      style={{
+        fontSize: mobile ? '1.5em' : '1.7em',
+        fontWeight: 'normal',
+        marginTop: mobile ? '0.5em' : '1.5em',
+      }}
+    />
+  </Container>
+)
+
+HomepageHeading.propTypes = {
+  mobile: PropTypes.bool,
+}
+
+const HomePage = () => (
+  <Container text>
+    <HomepageHeading />
+    <img src="img/logo.png" />
+
+    <Grid divided='vertically'>
+      <Grid.Row columns={3}>
+        <Grid.Column>
+
+        </Grid.Column>
+        <Grid.Column>
+
+        </Grid.Column>
+        <Grid.Column>
+          
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+  </Container>
 );
 
-HomePage.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  logout: PropTypes.func.isRequired
-}
 
-function mapStateToProps(state) {
-  return {
-    isAuthenticated: !!state.user.token
-  }
-}
-
-export default connect(mapStateToProps, {logout: actions.logout})(HomePage);
+export default HomePage;
