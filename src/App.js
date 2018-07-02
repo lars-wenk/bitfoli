@@ -6,6 +6,7 @@ import { Route } from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
 import DashboardPage from "./components/pages/DashBoardPage";
+import BrokerPage from "./components/pages/BrokerPage";
 import SignupPage from "./components/pages/SignupPage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
@@ -58,6 +59,12 @@ const App = ({ location, isAuthenticated }) => (
       path="/dashboard"
       exact
       component={DashboardPage}
+    />
+    <UserRoute
+      location={location}
+      path="/broker"
+      exact
+      component={BrokerPage}
     />
     <Footer />
   </div>

@@ -3,39 +3,52 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
   Menu,
-  Button
+  Button,
+  Segment
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import * as actions from "../../actions/auth";
 
 const TopNavigation = ({ user, logout, isAuthenticated }) => (
-  <div>
 
-  <Menu secondary pointing>
-    <Menu.Item as={Link} to="/dashboard">
-      Dashboard
-    </Menu.Item>
-    <Menu.Menu position="right">
+  <Segment inverted>
+    <div class="ui container">
+      <Menu inverted pointing secondary>
+        <Menu.Item as={Link} to="/">Home</Menu.Item>
+        <Menu.Item as={Link} to="/">Über bit :foli</Menu.Item>
+        <Menu.Item as={Link} to="/">FAQ</Menu.Item>
 
-    { isAuthenticated ? (
-      <Menu.Item onClick={() => logout()} to="/">
-        Logout
-      </Menu.Item>
-    ) : (
-      [
-        <Menu.Item name='signup' as={Link} to="/signup">
-          <Button primary>Sign up</Button>
-        </Menu.Item>,
-        <Menu.Item name='login' as={Link} to="/login">
-          <Button>Log-in</Button>
-        </Menu.Item>
-      ]
-    )}
+        <Menu.Menu position="right">
+        { isAuthenticated ? (
+          [
+            <Menu.Item as={Link} to="/dashboard">
+              Dashboard
+            </Menu.Item>,
+            <Menu.Item as={Link} to="/broker">
+              Broker
+            </Menu.Item>,
+            <Menu.Item onClick={() => logout()} to="/">
+              Logout
+            </Menu.Item>
+          ]
+        ) : (
+          [
+            <Menu.Item name='signup' as={Link} to="/signup">
+              <Button primary>Sign up</Button>
+            </Menu.Item>,
 
-    </Menu.Menu>
+            <Menu.Item name='login' as={Link} to="/login">
+              Account
+            </Menu.Item>
+          ]
+        )}
 
-  </Menu>
-  </div>
+        </Menu.Menu>
+
+      </Menu>
+    </div>
+  </Segment>
+
 );
 
 TopNavigation.propTypes = {

@@ -102,7 +102,7 @@ class LoginForm extends React.Component {
                 {errors.password && <InlineError text={errors.password} />}
               </Form.Field>
 
-              <Button color='blue' fluid size='large'>Login</Button>
+              <Button color='#61bcac' fluid size='large'>Login</Button>
             </Segment>
           </Form>
 

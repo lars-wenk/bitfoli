@@ -1,2 +1,4 @@
 export const USER_LOGGED_IN = 'USER_LOGGED_IN';
 export const USER_LOGGED_OUT = 'USER_LOGGED_OUT';
+export const BROKER_FETCHED = "BROKER_FETCHED";
+export const BROKER_CREATED = "BROKER_CREATED";

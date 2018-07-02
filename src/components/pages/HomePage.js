@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Icon, Grid, Container, Header } from 'semantic-ui-react';
+import {
+  Segment,
+  Button,
+  Icon,
+  Grid,
+  Container,
+  Header } from 'semantic-ui-react';
 
 const HomepageHeading = ({ mobile }) => (
+  <Segment inverted>
   <Container text>
     <Header
       as='h1'
@@ -26,6 +33,7 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
   </Container>
+  </Segment>
 )
 
 HomepageHeading.propTypes = {
@@ -33,8 +41,10 @@ HomepageHeading.propTypes = {
 }
 
 const HomePage = () => (
+  <div>
+  <HomepageHeading />
   <Container text>
-    <HomepageHeading />
+
     <img src="img/logo.png" />
 
     <Grid divided='vertically'>
@@ -46,12 +56,13 @@ const HomePage = () => (
 
         </Grid.Column>
         <Grid.Column>
-          
+
         </Grid.Column>
       </Grid.Row>
     </Grid>
 
   </Container>
+  </div>
 );
 
 
